@@ -5,6 +5,7 @@ import home from "./home.js";
 import auth from "./auth/auth.route.js";
 import materials from "./materials/materials.route.js";
 import questions from "./questions/questions.route.js";
+import answers from "./answers/answers.route.js";
 
 class App {
   express;
@@ -45,6 +46,7 @@ class App {
     this.express.use("/api/auth", auth);
     this.express.use("/api/materials", materials);
     this.express.use("/api/questions", questions);
+    this.express.use("/api/answers", answers);
   }
 }
 
