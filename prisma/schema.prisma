@@ -22,11 +22,29 @@ model subjects {
     name    String @db.VarChar(255)
 }
 
-model File {
+model file {
   id         Int      @id @default(autoincrement())
   subject    String   @db.VarChar(255)
   fileName   String   @db.VarChar(255)
   fileType   String   @db.VarChar(255)
   fileData   Bytes
   uploadedAt DateTime @default(now())
+}
+
+model events {
+  id         Int      @id @default(autoincrement())
+  name       String   @db.VarChar(255)
+  stud_id    Int
+  Date       DateTime @db.Date
+}
+
+model questions {
+  id         Int      @id @default(autoincrement())
+  question   String   @db.VarChar(255)
+}
+
+model answers {
+  id         Int      @id @default(autoincrement())
+  qid        Int
+  answer     String   @db.VarChar(255)
 }
