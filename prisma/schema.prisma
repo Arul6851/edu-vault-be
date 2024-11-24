@@ -33,9 +33,9 @@ model file {
 
 model events {
   id         Int      @id @default(autoincrement())
-  name       String   @db.VarChar(255)
+  title       String   @db.VarChar(255)
   stud_id    Int
-  Date       DateTime @db.Date
+  date       DateTime @db.Date
 }
 
 model questions {

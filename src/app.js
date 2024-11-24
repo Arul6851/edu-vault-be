@@ -6,6 +6,7 @@ import auth from "./auth/auth.route.js";
 import materials from "./materials/materials.route.js";
 import questions from "./questions/questions.route.js";
 import answers from "./answers/answers.route.js";
+import events from "./events/events.route.js";
 
 class App {
   express;
@@ -47,6 +48,7 @@ class App {
     this.express.use("/api/materials", materials);
     this.express.use("/api/questions", questions);
     this.express.use("/api/answers", answers);
+    this.express.use("/api/events", events);
   }
 }
 
