@@ -3,6 +3,7 @@ import cors from "cors";
 import bodyparser from "body-parser";
 import home from "./home.js";
 import auth from "./auth/auth.route.js";
+import materials from "./materials/materials.route.js";
 
 class App {
   express;
@@ -41,6 +42,7 @@ class App {
 
     this.express.use("/api", home);
     this.express.use("/api/auth", auth);
+    this.express.use("/api/materials", materials);
   }
 }
 

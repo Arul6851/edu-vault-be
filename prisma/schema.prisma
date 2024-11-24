@@ -22,9 +22,11 @@ model subjects {
     name    String @db.VarChar(255)
 }
 
-model materials {
-    id      Int @id @default(autoincrement())
-    name    String @db.VarChar(255)
-    sub_id  Int 
-    file    String @db.VarChar(255) 
+model File {
+  id         Int      @id @default(autoincrement())
+  subject    String   @db.VarChar(255)
+  fileName   String   @db.VarChar(255)
+  fileType   String   @db.VarChar(255)
+  fileData   Bytes
+  uploadedAt DateTime @default(now())
 }
