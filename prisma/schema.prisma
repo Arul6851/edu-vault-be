@@ -12,8 +12,7 @@ model student {
   regno     String   @db.VarChar(50)
   name      String   @db.VarChar(200)
   year      Int
-  semester  Int
   dept      String   @db.VarChar(50)
-  quota     String   @db.VarChar(2)
   dob       DateTime @db.Date
+  pass      String   @db.VarChar(512)
 }
