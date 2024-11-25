@@ -19,10 +19,11 @@ class UploadController {
           });
         }
 
-        const { subject } = req.body;
-        console.log("Body : " + subject);
+        const { subjectID } = req.body;
+        const subject = await prisma.subjects.findUnique({
+          where: { id: subjectID },
+        });
         const file = req.file;
-
         if (!file) {
           return res.status(400).json({ message: "No file uploaded" });
         }
@@ -30,7 +31,7 @@ class UploadController {
         try {
           const uploadedFile = await prisma.file.create({
             data: {
-              subject,
+              subjectID,
               fileName: file.originalname,
               fileType: file.mimetype,
               fileData: file.buffer, // File stored as binary data

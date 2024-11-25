@@ -24,7 +24,7 @@ model subjects {
 
 model file {
   id         Int      @id @default(autoincrement())
-  subject    String   @db.VarChar(255)
+  subjectID  String   @db.VarChar(255)
   fileName   String   @db.VarChar(255)
   fileType   String   @db.VarChar(255)
   fileData   Bytes
