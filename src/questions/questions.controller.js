@@ -6,7 +6,6 @@ const PostQuestion = async (req, res) => {
     if (!question) {
       return res.status(400).json({ message: "Question is required" });
     }
-    console.log(question);
     const newQuestion = await prisma.questions.create({
       data: {
         question,
